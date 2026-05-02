@@ -35,7 +35,7 @@ func main() {
 	fmt.Println("created table proxy_test")
 
 	// Insert some rows
-	for i := 0; i < 5; i++ {
+	for i := range 5 {
 		_, err := db.Exec("INSERT INTO proxy_test (name, value) VALUES ($1, $2)",
 			fmt.Sprintf("item_%d", i), i*10)
 		if err != nil {
